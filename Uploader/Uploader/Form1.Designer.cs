@@ -37,6 +37,10 @@
             this.PostBody = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.PublishButton = new System.Windows.Forms.Button();
+            this.ButtonPanel = new System.Windows.Forms.Panel();
+            this.InfoWarning = new System.Windows.Forms.PictureBox();
+            this.ButtonPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InfoWarning)).BeginInit();
             this.SuspendLayout();
             // 
             // openNewsletter
@@ -56,6 +60,7 @@
             // 
             // FileSelection
             // 
+            this.FileSelection.AllowDrop = true;
             this.FileSelection.Location = new System.Drawing.Point(12, 25);
             this.FileSelection.Name = "FileSelection";
             this.FileSelection.Size = new System.Drawing.Size(279, 20);
@@ -109,7 +114,7 @@
             // 
             // PublishButton
             // 
-            this.PublishButton.Location = new System.Drawing.Point(263, 228);
+            this.PublishButton.Location = new System.Drawing.Point(3, 3);
             this.PublishButton.Name = "PublishButton";
             this.PublishButton.Size = new System.Drawing.Size(75, 23);
             this.PublishButton.TabIndex = 7;
@@ -117,12 +122,30 @@
             this.PublishButton.UseVisualStyleBackColor = true;
             this.PublishButton.Click += new System.EventHandler(this.Publish_Click);
             // 
+            // ButtonPanel
+            // 
+            this.ButtonPanel.Controls.Add(this.PublishButton);
+            this.ButtonPanel.Location = new System.Drawing.Point(258, 222);
+            this.ButtonPanel.Name = "ButtonPanel";
+            this.ButtonPanel.Size = new System.Drawing.Size(80, 29);
+            this.ButtonPanel.TabIndex = 8;
+            // 
+            // InfoWarning
+            // 
+            this.InfoWarning.Image = global::Uploader.Properties.Resources.Info16;
+            this.InfoWarning.Location = new System.Drawing.Point(239, 232);
+            this.InfoWarning.Name = "InfoWarning";
+            this.InfoWarning.Size = new System.Drawing.Size(16, 16);
+            this.InfoWarning.TabIndex = 9;
+            this.InfoWarning.TabStop = false;
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(341, 263);
-            this.Controls.Add(this.PublishButton);
+            this.Controls.Add(this.InfoWarning);
+            this.Controls.Add(this.ButtonPanel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.PostBody);
             this.Controls.Add(this.PostTitle);
@@ -133,6 +156,8 @@
             this.Name = "MainScreen";
             this.Text = "Newsletter Uploader";
             this.Load += new System.EventHandler(this.MainScreenLoad);
+            this.ButtonPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.InfoWarning)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,6 +174,8 @@
         public System.Windows.Forms.TextBox FileSelection;
         public System.Windows.Forms.TextBox PostTitle;
         public System.Windows.Forms.RichTextBox PostBody;
+        private System.Windows.Forms.Panel ButtonPanel;
+        private System.Windows.Forms.PictureBox InfoWarning;
     }
 }
 
