@@ -44,13 +44,12 @@ namespace Uploader
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            string RemotePath;  //This will store the location of the uploaded newsletter pdf
 
             try //If any part of this fails abort it all.
             {
                 WPClient.init(BlogUrlBox.Text, WordpressUsernameBox.Text, WordpressPasswordBox.Text);   //Initialise the client
                 backgroundUpload.ReportProgress(10);
-                RemotePath = WPClient.UploadLetter(Globals.localNewsletterPath, Path.GetFileName(Globals.localNewsletterPath)); //Upload the Newsletter PDF and get the remote path for it.
+                Globals.RemoteNewsletterPath = WPClient.UploadLetter(Globals.localNewsletterPath, Path.GetFileName(Globals.localNewsletterPath)); //Upload the Newsletter PDF and get the remote path for it.
                 backgroundUpload.ReportProgress(70);
                 WPClient.UploadPost(GeneratePost());    //Generate a post based on the entered info and upload it.
                 backgroundUpload.ReportProgress(100);

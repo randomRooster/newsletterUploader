@@ -106,6 +106,7 @@
             this.WordpressPasswordBox.PasswordChar = '•';
             this.WordpressPasswordBox.Size = new System.Drawing.Size(251, 20);
             this.WordpressPasswordBox.TabIndex = 7;
+            this.WordpressPasswordBox.UseSystemPasswordChar = true;
             // 
             // UploadButton
             // 
