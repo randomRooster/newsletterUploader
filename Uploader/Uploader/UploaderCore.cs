@@ -42,6 +42,10 @@ namespace UploaderCore
             {
                 Client.NewPost(post);   //Publish the preconfigured post
                 Log.Add("Post uploaded!");
+                
+                //A message to the user to fulfil the tasks left behind by deficiencies in the program.
+                //TODO: MAKE IT SO THE USER DOESN'T HAVE TO DO THE BELOW
+                Log.Add("NOTE: THE POST IS NOT YET LIVE\nManually log into the website, find the post in Posts>All Posts, set the apporpriate categories, and then publish./\nYou may now close this window.");
             }
             catch (Exception e)
             {
