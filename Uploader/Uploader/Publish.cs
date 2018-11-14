@@ -39,7 +39,7 @@ namespace Uploader
 
         private string GeneratePostContent()
         {
-            return @"<div id = ""pdf""><object id = ""pdf_content"" data=""" + Globals.RemoteNewsletterPath + @"?#zoom=85&amp;scrollbar=1&amp;toolbar=1&amp;navpanes=1"" type = ""application/pdf"" width = ""400"" height = ""500""> To display embedded.pdf files a modern web - browser is required. Click here to download the.pdf file for viewing in a separate program: <a href = """ + Globals.RemoteNewsletterPath + "</a></object></div>" + Globals.PostBody;
+            return @"<div id = ""pdf""><object id = ""pdf_content"" data=""" + Globals.RemoteNewsletterPath + @"?#zoom=85&amp;scrollbar=1&amp;toolbar=1&amp;navpanes=1"" type = ""application/pdf"" width = ""400"" height = ""500""> Newsletter for the above date<a href = """ + Globals.RemoteNewsletterPath + "</a></object></div>" + Globals.PostBody;
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
