@@ -17,6 +17,8 @@ namespace Uploader
         public Publish()
         {
             InitializeComponent();
+            InformationIcon.Hide();
+            //CheckUserInputs();
         }
 
         private void UploadButton_Click(object sender, EventArgs e) //When this is clicked, start the upload sequence.
@@ -67,6 +69,90 @@ namespace Uploader
             {
                 PublishLog.AppendText(WPClient.Log[i] + "\n");
             }
+        }
+        //private void CheckUserInputs()
+        //{
+        //    bool UrlOkay, UrlHasHTTP, UsernameOkay, PasswordOkay;
+        //    if(BlogUrlBox.Text != "")
+        //    {
+        //        if (BlogUrlBox.Text.Contains("http://") || BlogUrlBox.Text.Contains("https://"))
+        //        {
+        //            UrlHasHTTP = true;
+        //            UrlOkay = true;
+        //        }
+        //        else
+        //        {
+        //            UrlHasHTTP = false;
+        //            UrlOkay = false;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        UrlOkay = false;
+        //        UrlHasHTTP = false;
+        //    }
+
+        //    if (WordpressUsernameBox.Text != "")
+        //    {
+        //        UsernameOkay = true;
+        //    }
+        //    else
+        //    {
+        //        UsernameOkay = false;
+        //    }
+
+        //    if(WordpressPasswordBox.Text != "")
+        //    {
+        //        PasswordOkay = true;
+        //    }
+        //    else
+        //    {
+        //        PasswordOkay = false;
+        //    }
+
+        //    if(UrlOkay && UsernameOkay && PasswordOkay)
+        //    {
+        //        InformationIcon.Hide();
+        //        UploadTip.Active = false;
+        //        UploadButton.Enabled = true;
+        //    }
+        //    else
+        //    {
+        //        InformationIcon.Show();
+        //        UploadTip.Active = true;
+        //        UploadButton.Enabled = false;
+        //        if (!UrlOkay)
+        //        {
+        //            UploadTip.SetToolTip(this.UploadButton, "Enter the full address of the website (e.g. http://www.example.com)");
+        //        }
+        //        else if(!UrlHasHTTP)
+        //        {
+        //            UploadTip.SetToolTip(this.UploadButton, "Ensure the address has \"http://\" or \"https://\" at the front");
+        //        }
+        //        else if (!UsernameOkay)
+        //        {
+        //            UploadTip.SetToolTip(this.UploadButton, "Enter your username");
+        //        }
+        //        else if (!PasswordOkay)
+        //        {
+        //            UploadTip.SetToolTip(this.UploadButton, "Enter your password");
+        //        }
+        //    }
+        //}
+
+        private void BlogUrlBox_TextChanged(object sender, EventArgs e)
+        {
+            //CheckUserInputs();
+        }
+
+        private void WordpressUsernameBox_TextChanged(object sender, EventArgs e)
+        {
+            //CheckUserInputs();
+        }
+
+        private void WordpressPasswordBox_TextChanged(object sender, EventArgs e)
+        {
+            //CheckUserInputs();
         }
     }
 }

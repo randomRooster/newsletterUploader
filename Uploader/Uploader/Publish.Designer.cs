@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.PublishLog = new System.Windows.Forms.RichTextBox();
             this.LogLabel = new System.Windows.Forms.Label();
             this.BlogUrlLabel = new System.Windows.Forms.Label();
@@ -38,6 +39,9 @@
             this.WordpressPasswordBox = new System.Windows.Forms.TextBox();
             this.UploadButton = new System.Windows.Forms.Button();
             this.backgroundUpload = new System.ComponentModel.BackgroundWorker();
+            this.InformationIcon = new System.Windows.Forms.PictureBox();
+            this.UploadTip = new System.Windows.Forms.ToolTip(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.InformationIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // PublishLog
@@ -73,6 +77,7 @@
             this.BlogUrlBox.Name = "BlogUrlBox";
             this.BlogUrlBox.Size = new System.Drawing.Size(251, 20);
             this.BlogUrlBox.TabIndex = 3;
+            this.BlogUrlBox.TextChanged += new System.EventHandler(this.BlogUrlBox_TextChanged);
             // 
             // UsernameLabel
             // 
@@ -89,6 +94,7 @@
             this.WordpressUsernameBox.Name = "WordpressUsernameBox";
             this.WordpressUsernameBox.Size = new System.Drawing.Size(251, 20);
             this.WordpressUsernameBox.TabIndex = 5;
+            this.WordpressUsernameBox.TextChanged += new System.EventHandler(this.WordpressUsernameBox_TextChanged);
             // 
             // Password
             // 
@@ -107,6 +113,7 @@
             this.WordpressPasswordBox.Size = new System.Drawing.Size(251, 20);
             this.WordpressPasswordBox.TabIndex = 7;
             this.WordpressPasswordBox.UseSystemPasswordChar = true;
+            this.WordpressPasswordBox.TextChanged += new System.EventHandler(this.WordpressPasswordBox_TextChanged);
             // 
             // UploadButton
             // 
@@ -124,11 +131,21 @@
             this.backgroundUpload.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundUpload.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
             // 
+            // InformationIcon
+            // 
+            this.InformationIcon.Image = global::Uploader.Properties.Resources.Info16;
+            this.InformationIcon.Location = new System.Drawing.Point(166, 238);
+            this.InformationIcon.Name = "InformationIcon";
+            this.InformationIcon.Size = new System.Drawing.Size(16, 16);
+            this.InformationIcon.TabIndex = 9;
+            this.InformationIcon.TabStop = false;
+            // 
             // Publish
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(275, 262);
+            this.Controls.Add(this.InformationIcon);
             this.Controls.Add(this.UploadButton);
             this.Controls.Add(this.WordpressPasswordBox);
             this.Controls.Add(this.Password);
@@ -140,6 +157,7 @@
             this.Controls.Add(this.PublishLog);
             this.Name = "Publish";
             this.Text = "Publish";
+            ((System.ComponentModel.ISupportInitialize)(this.InformationIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,5 +175,7 @@
         private System.Windows.Forms.TextBox WordpressPasswordBox;
         private System.Windows.Forms.Button UploadButton;
         private System.ComponentModel.BackgroundWorker backgroundUpload;
+        private System.Windows.Forms.PictureBox InformationIcon;
+        private System.Windows.Forms.ToolTip UploadTip;
     }
 }

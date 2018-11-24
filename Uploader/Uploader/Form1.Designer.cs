@@ -133,7 +133,7 @@
             // InfoWarning
             // 
             this.InfoWarning.Image = global::Uploader.Properties.Resources.Info16;
-            this.InfoWarning.Location = new System.Drawing.Point(239, 232);
+            this.InfoWarning.Location = new System.Drawing.Point(239, 235);
             this.InfoWarning.Name = "InfoWarning";
             this.InfoWarning.Size = new System.Drawing.Size(16, 16);
             this.InfoWarning.TabIndex = 9;
